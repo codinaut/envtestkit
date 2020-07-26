@@ -10,7 +10,7 @@
 //!
 //! let _lock = lock_test();
 //! let _test = set_env(OsString::from("ENV_KEY"), "value");
-//! // Do your test here ...
+//! // Put your test logic here ...
 //! ```
 //!
 //! Complete examples can be found in `examples/` directory of this crate.
