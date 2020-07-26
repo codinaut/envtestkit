@@ -2,6 +2,9 @@
 name = "envtestkit"
 version = "0.1.0"
 authors = ["Daniel <codinaut@gmail.com>"]
+description = "Test kit for logics with environment variable involvements"
+license = "MIT"
+homepage = "https://github.com/codinaut/envtestkit"
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
