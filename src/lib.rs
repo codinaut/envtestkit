@@ -4,8 +4,8 @@
 //!
 //! To test environment-related logics:
 //! ```
+//! use envtestkit::lock::lock_test;
 //! use envtestkit::set_env;
-//! use envtestkit::lock::lock_read;
 //! use std::ffi::OsString;
 //!
 //! let _lock = lock_test();
