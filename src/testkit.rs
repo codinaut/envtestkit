@@ -3,16 +3,21 @@ use std::ffi::{OsStr, OsString};
 
 pub struct EnvironmentTestGuard {
     key: OsString,
+    value: Option<OsString>,
 }
 
 pub fn set_env<V: AsRef<OsStr>>(key: OsString, value: V) -> EnvironmentTestGuard {
+    let prev_value = env::var_os(&key);
     env::set_var(&key, value);
-    EnvironmentTestGuard { key }
+    EnvironmentTestGuard { key, value: prev_value }
 }
 
 impl Drop for EnvironmentTestGuard {
     fn drop(&mut self) {
-        env::remove_var(&self.key)
+        match &self.value {
+            Some(value) => env::set_var(&self.key, value),
+            None => env::remove_var(&self.key)
+        }
     }
 }
 
@@ -23,11 +28,15 @@ mod test {
     use fake::Fake;
     use serial_test::serial;
 
+    fn gen_key() -> OsString {
+        OsString::from(Word().fake::<String>())
+    }
+    fn gen_value() -> OsString {
+        OsString::from(Sentence(1..10).fake::<String>())
+    }
+
     fn gen_pair() -> (OsString, OsString) {
-        (
-            OsString::from(Word().fake::<String>()),
-            OsString::from(Sentence(1..10).fake::<String>()),
-        )
+        (gen_key(), gen_value())
     }
 
     #[test]
@@ -46,5 +55,16 @@ mod test {
             let _e = set_env(key.clone(), &value);
         }
         assert_eq!(env::var_os(key), None)
+    }
+
+    #[test]
+    #[serial]
+    fn set_env_restore() {
+        let (key, value) = gen_pair();
+        env::set_var(&key, &value);
+        {
+            let _e = set_env(key.clone(), gen_value());
+        }
+        assert_eq!(env::var_os(key).unwrap(), value)
     }
 }
