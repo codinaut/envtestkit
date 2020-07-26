@@ -89,9 +89,10 @@ jobs:
             @semantic-release/changelog \
             @semantic-release/exec \
             semantic-release
+          echo "::add-path::$(yarn global bin)"
 
       - name: Release
         run: |
-          npx semantic-release
+          semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
