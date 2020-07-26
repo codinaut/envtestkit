@@ -92,6 +92,6 @@ jobs:
 
       - name: Release
         run: |
-          semantic-release
+          npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
