@@ -73,6 +73,7 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push'
     needs:
       - clippy
       - format
