@@ -1,6 +1,7 @@
 use std::env;
 use std::ffi::{OsStr, OsString};
 
+#[must_use = "if unused environment will immediately be cleaned up"]
 pub struct EnvironmentTestGuard {
     key: OsString,
     value: Option<OsString>,
