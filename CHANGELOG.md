@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/codinaut/envtestkit/compare/v1.0.0...v1.1.0) (2020-07-26)
+
+
+### Features
+
+* lock environment-related tests ([cdd1503](https://github.com/codinaut/envtestkit/commit/cdd1503f135c83842efda8a8ba226fd1f69dfe23))
+
 # 1.0.0 (2020-07-26)
 
 
