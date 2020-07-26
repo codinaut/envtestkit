@@ -88,7 +88,7 @@ jobs:
           yarn global add \
             @semantic-release/changelog \
             @semantic-release/exec \
-            semantic-selease
+            semantic-release
 
       - name: Release
         run: |
