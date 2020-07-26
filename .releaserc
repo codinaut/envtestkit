@@ -6,7 +6,8 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "sed -i 's/^version = \\\".*\\\"/version = \"${nextRelease.version}\"/' Cargo.toml && git add Cargo.toml"
+        "prepareCmd": "sed -i 's/^version = \\\".*\\\"/version = \"${nextRelease.version}\"/' Cargo.toml && git add Cargo.toml",
+        "publishCmd": "cargo publish --token $CARGO_TOKEN"
       }
     ],
     "@semantic-release/git",

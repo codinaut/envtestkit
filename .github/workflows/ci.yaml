@@ -93,6 +93,13 @@ jobs:
             semantic-release
           echo "::add-path::$(yarn global bin)"
 
+      - name: Toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
       - name: Release
         run: |
           semantic-release
