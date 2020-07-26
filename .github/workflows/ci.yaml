@@ -83,6 +83,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Plugins
+        run: |
+          npm install -g \
+            @semantic-release/changelog \
+            @semantic-release/exec
+
       - name: Release
         uses: codfish/semantic-release-action@master
         env:
