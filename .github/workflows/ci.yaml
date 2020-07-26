@@ -46,7 +46,7 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: format
+      - name: Format
         uses: actions-rs/cargo@v1
         with:
           command: fmt
@@ -65,7 +65,7 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: format
+      - name: Clippy
         uses: actions-rs/cargo@v1
         with:
           command: clippy
