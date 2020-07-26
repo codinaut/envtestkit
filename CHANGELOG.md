@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/codinaut/envtestkit/compare/v1.1.0...v1.1.1) (2020-07-26)
+
+
+### Bug Fixes
+
+* show warning if guard is unused ([068b2c7](https://github.com/codinaut/envtestkit/commit/068b2c7bddd994ca82ee1dfa19dd130a515dac4e))
+
 # [1.1.0](https://github.com/codinaut/envtestkit/compare/v1.0.0...v1.1.0) (2020-07-26)
 
 
