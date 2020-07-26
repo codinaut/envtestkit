@@ -85,11 +85,13 @@ jobs:
 
       - name: Plugins
         run: |
-          npm install -g \
+          yarn global add \
             @semantic-release/changelog \
-            @semantic-release/exec
+            @semantic-release/exec \
+            semantic-selease
 
       - name: Release
-        uses: codfish/semantic-release-action@master
+        run: |
+          semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
