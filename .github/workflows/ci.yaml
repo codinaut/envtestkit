@@ -41,6 +41,10 @@ jobs:
 
       - name: Toolchain
         uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
 
       - name: format
         uses: actions-rs/cargo@v1
@@ -56,6 +60,10 @@ jobs:
 
       - name: Toolchain
         uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
 
       - name: format
         uses: actions-rs/cargo@v1
