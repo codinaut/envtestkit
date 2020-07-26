@@ -9,7 +9,7 @@ Test kit for logics with environment variable involvements.
 
 ## Usage
 
-See [the documentation](https://docs.rs/envtestkit).
+See [the documentation](https://docs.rs/envtestkit) and [examples](examples/).
 
 ## Hacking
 
