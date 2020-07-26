@@ -1,12 +1,25 @@
 use std::env;
 use std::ffi::{OsStr, OsString};
 
+/// Guard temporary environment modification.
+///
+/// Clean up environment modification after this guard is out of scope.
 #[must_use = "if unused environment will immediately be cleaned up"]
 pub struct EnvironmentTestGuard {
     key: OsString,
     value: Option<OsString>,
 }
 
+/// Set environment variable temporarily for testing.
+///
+/// # Examples
+///
+/// ```
+/// use envtestkit::set_env;
+/// use std::ffi::OsString;
+///
+/// let _test = set_env(OsString::from("ENV_KEY"), "value");
+/// ```
 pub fn set_env<V: AsRef<OsStr>>(key: OsString, value: V) -> EnvironmentTestGuard {
     let prev_value = env::var_os(&key);
     env::set_var(&key, value);
