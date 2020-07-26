@@ -88,6 +88,8 @@ jobs:
           yarn global add \
             @semantic-release/changelog \
             @semantic-release/exec \
+            @semantic-release/git \
+            @semantic-release/github \
             semantic-release
           echo "::add-path::$(yarn global bin)"
 
