@@ -1,4 +1,9 @@
-mod testkit;
+#[cfg(feature = "lock")]
+#[macro_use]
+extern crate lazy_static;
 
-pub use testkit::set_env;
-pub use testkit::EnvironmentTestGuard;
+#[cfg(feature = "lock")]
+pub mod lock;
+
+mod testkit;
+pub use testkit::*;
