@@ -104,4 +104,5 @@ jobs:
         run: |
           semantic-release
         env:
+          CARGO_TOKEN: ${{ secrets.CARGO_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
