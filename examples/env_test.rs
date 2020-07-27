@@ -22,7 +22,6 @@ mod test {
     #[test]
     fn get_name_default() {
         let _lock = lock_read();
-        thread::sleep(time::Duration::from_millis(100));
         assert_eq!(get_name(), "default-value")
     }
 
@@ -30,8 +29,6 @@ mod test {
     fn get_name_overriden() {
         let _lock = lock_test();
         let _test = set_env(OsString::from("NAME"), "not-default-one");
-
-        thread::sleep(time::Duration::from_millis(200));
         assert_eq!(get_name(), "not-default-one")
     }
 
