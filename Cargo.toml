@@ -5,6 +5,7 @@ edition = "2018"
 homepage = "https://github.com/codinaut/envtestkit"
 license = "MIT"
 name = "envtestkit"
+readme = "README.md"
 version = "1.1.1"
 
 [features]
