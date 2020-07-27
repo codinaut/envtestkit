@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/codinaut/envtestkit/compare/v1.1.1...v1.1.2) (2020-07-27)
+
+
+### Bug Fixes
+
+* refer README in crate metadata ([45967f2](https://github.com/codinaut/envtestkit/commit/45967f204ce8887708cc1c22c4aa5a455c4afc1c))
+
 ## [1.1.1](https://github.com/codinaut/envtestkit/compare/v1.1.0...v1.1.1) (2020-07-26)
 
 
